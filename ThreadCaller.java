@@ -21,15 +21,13 @@ package multitheradingDemo;
  
 public  class ThreadCaller {
 	
-	static volatile int a=0,b=0;
+	static volatile int count;
 	 
 	 static void method1() {
-		 a++;
-		 b++;
+		 count++;
+		
 	}
-	 static void method2() {
-		 System.out.println("A ="+a+" B ="+b);
-	 }
+	
 	 
 
 	public static void main(String[] args) throws InterruptedException {
@@ -58,15 +56,15 @@ public  class ThreadCaller {
 		
 		Thread thread3=new Thread(){
 			public void run() {
-				for(int i=0;i<5;i++)
+				for(int i=0;i<1000;i++)
 				method1();
 			}
 		};
 		
 		Thread thread4=new Thread() {
 			public void run() {
-				for(int i=0;i<5;i++)
-				method2();
+				for(int i=0;i<1000;i++)
+				method1();
 			}
 		};
 		thread3.start();
