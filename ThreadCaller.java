@@ -68,6 +68,7 @@ public  class ThreadCaller {
 			}
 		};
 		thread3.start();
+		
 		thread4.start();
 		
 		
@@ -78,7 +79,7 @@ public  class ThreadCaller {
 		thread4.join();
 		
 		
-		
+		Thread.currentThread().sleep(2000);
 		for(int i=0;i<5;i++) {
 			System.out.println("Mainthread");
 		}
