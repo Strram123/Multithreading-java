@@ -54,19 +54,19 @@ public  class ThreadCaller {
 		
 		
 		
-		Thread thread3=new Thread(){
+		Thread thread3=new Thread(new Runnable(){
 			public void run() {
 				for(int i=0;i<1000;i++)
 				method1();
 			}
-		};
+		});
 		
-		Thread thread4=new Thread() {
+		Thread thread4=new Thread(new Runnable() {
 			public void run() {
 				for(int i=0;i<1000;i++)
 				method1();
 			}
-		};
+		});
 		thread3.start();
 		
 		thread4.start();
